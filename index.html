@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gartic Phoneで国際交流！ | Gartic Phone International Exchange Event</title>
+    <style>
+        /* 全体の設定 */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.9;
+            color: #2c2c2c;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            word-break: keep-all;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* コンテンツ全体のコンテナ */
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        /* ヘッダー */
+        .header {
+            text-align: center;
+            border-bottom: 3px dashed #00A9A4; 
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+        .header h1 {
+            color: #007A75;
+            font-size: 2.8em;
+            margin: 0;
+            font-weight: 800;
+        }
+        .header p {
+            font-size: 1.4em;
+            color: #555;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* 本文・見出し */
+        p {
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+        }
+        h2 {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #007A75; 
+            border-left: 7px solid #00A9A4;
+            padding-left: 20px;
+            margin-top: 50px;
+        }
+        h3 {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #00A9A4; 
+            margin-top: 40px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        /* タイムテーブル */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            font-size: 1.05em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 16px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #E6F6F5;
+            font-weight: 700;
+        }
+        td.time {
+            font-weight: 700;
+            color: #00A9A4;
+            width: 20%;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .purpose {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        
+        /* ゲームフローのレイアウト（縦方向） */
+        .flow-chart {
+            display: flex;
+            flex-direction: column; /* 上から下への縦レイアウトに変更 */
+            align-items: center; /* 中央揃え */
+            margin-top: 30px;
+        }
+        .flow-step {
+            width: 80%; /* ステップの幅を広げる */
+            max-width: 800px;
+            margin: 15px 0;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: #fdfdfd;
+        }
+        .flow-icon {
+            font-size: 3em; /* アイコンサイズを調整 */
+            color: #00A9A4;
+            line-height: 1;
+        }
+        .flow-step p {
+            font-size: 1.2em;
+            font-weight: 700; /* ステップのテキストを太く */
+            margin: 10px 0 0 0;
+        }
+        .flow-arrow {
+            font-size: 2.5em; /* 矢印のサイズ */
+            color: #888;
+            margin: 10px 0; /* 縦の余白を調整 */
+        }
+        
+        /* ▼▼▼ スクリーンショット画像用のスペース ▼▼▼ */
+        .screenshot-img {
+            display: block;
+            width: 100%;
+            max-width: 750px;
+            min-height: 250px; /* 画像がない場合でも高さを確保 */
+            margin: 20px auto 0 auto;
+            border: 3px #a0a0a0;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            /* 画像がない場合に表示されるaltテキストのスタイル */
+            text-align: center;
+            font-weight: 600;
+            font-size: 1em;
+            color: #888;
+            line-height: 250px; /* min-heightと合わせて縦中央に */
+        }
+        /* ▲▲▲ ここまで ▲▲▲ */
+        
+        .rule-section {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .rule-icon {
+            font-size: 3.5em;
+            margin-right: 25px;
+        }
+        .rule-description {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        .highlight {
+            background-color: #E6F6F5;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        
+        ul { padding-left: 30px; }
+        li { margin-bottom: 1em; font-size: 1.1em; }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #ccc;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #777;
+        }
+
+        /* ▼▼▼ PDF出力用のスタイルを修正 ▼▼▼ */
+        @media print {
+            /* 印刷時の基本設定 */
+            body {
+                padding: 0;
+                margin: 0;
+                font-size: 11pt;
+                /* 背景色や文字色を強制的に印刷する設定 */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                border-radius: 0;
+                width: 100%;
+                max-width: 100%;
+                border: none;
+                text-align: center; /* 全体を中央揃えに */
+            }
+
+            /* 左揃えを維持する要素 */
+            h2, h3 { text-align: left; }
+            table, ul, .rule-description, .purpose { text-align: left; }
+            
+            /* h2要素の前で改ページ */
+            h2 {
+                page-break-before: always;
+                padding-top: 20px;
+            }
+
+            /* 最初のh2の前では改ページしない */
+            .container > h2:first-of-type {
+                page-break-before: auto;
+                padding-top: 0;
+            }
+            
+            /* 要素の途中で改ページされるのを防ぐ */
+            .flow-step, .rule-section, table, li {
+                page-break-inside: avoid;
+            }
+
+            /* 画像の表示調整 */
+            .screenshot-img {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            /* フローチャートの矢印は非表示に */
+            .flow-arrow { display: none; }
+            .flow-step { margin: 10px 0; }
+        }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CBTF ゲーム企画 Gartic Phone</h1>
+            <p>CBTF Game Event Gartic Phone</p>
+        </div>
+
+        <p>皆さん、こんにちは！</p>
+        <p>本日は、海外拠点のメンバーとの交流企画にご参加いただきありがとうございます。今回は、お絵かき伝言ゲーム「Gartic Phone」を使って、チームで協力しながら楽しみましょう！言葉の壁を越えて、クリエイティブなコミュニケーションを体験してください。</p>
+        <p>Hello everyone! Thank you for joining our exchange event. Today, we'll be playing the drawing and guessing game "Gartic Phone"! Let's have fun and get creative together, transcending language barriers.</p>
+
+        <h2>タイムテーブル / Timetable (60min)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>時間 (Time)</th>
+                    <th>内容 (Content)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time">10 min</td>
+                    <td>
+                        <strong>オープニング & ゲーム導入<br>Opening & Game Introduction</strong>
+                        <p class="purpose">CBTFメンバーの自己紹介および企画目的の説明。<br>Self-introduction of CBTF members an explanation of the project's purpose.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">45 min</td>
+                    <td>
+                        <strong>ゲームプレイ<br>Game Play</strong>
+                        <p class="purpose">ゲームをするときのお題を変えながら、2~3回プレイ。<br>Play 2-3 times while changing the theme for the game.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="time">5 min</td>
+                    <td>
+                        <strong>締め / Closing</strong>
+                        <p class="purpose">全体の振り返り<br>Overall review<br>アンケートの依頼<br>Request to complete a survey</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Gartic Phone ルール説明 / <br>How to Play Gartic Phone</h2>
+        <p>Gartic Phoneは、<span class="highlight">「文章」→「絵」→「文章」→「絵」...</span>と、交互に伝言していくゲームです。完璧な絵や文章は必要ありません！楽しむことが一番の目的です。</p>
+        <p>Gartic Phone is a game where you pass a message along, alternating between <span class="highlight">"Sentence" -> "Drawing" -> "Sentence" -> "Drawing"</span>... Don't worry about perfect drawings or descriptions! The main goal is to have fun.</p>
+
+        <h3>ゲームの流れ / How to Play</h3>
+        <p style="text-align:center;">最初のプレイヤーが書いた「お題」が、みんなの「絵」と「文章」でどのように変化していくのかを楽しむモードです。</p>
+        <p style="text-align:center;">This mode lets you enjoy watching how the initial "theme" written by the first player transforms through everyone's "drawings" and "descriptions."</p>
+
+        <div class="flow-chart">
+            <div class="flow-step">
+                <div class="flow-icon">✏️</div>
+                <p><strong>Step 1: 文章を書く (Write a sentence)</strong></p>
+                <img class="screenshot-img" src="Description.jpg" alt="文章入力画面のスクリーンショット">
+                <p>✏️A cat wearing a tiny hat riding a unicycle.</p>
+            </div>
+            
+            <div class="flow-arrow">⬇️</div>
+
+            <div class="flow-step">
+                <div class="flow-icon">🎨</div>
+                <p><strong>Step 2: 絵を描く (Draw the sentence)</strong></p>
+                <img class="screenshot-img" src="drawing.png" alt="お絵描き画面のスクリーンショット">
+            </div>
+
+            <div class="flow-arrow">⬇️</div>
+
+            <div class="flow-step">
+                <div class="flow-icon">👀</div>
+                <p><strong>Step 3: 文章で説明 (Describe the drawing)</strong></p>
+                <img class="screenshot-img" src="DescDrawing.jpg" alt="絵を見て説明文を入力する画面のスクリーンショット">
+                <p>✏️A cat wearing a hat standing on a watermelon.</p>
+            </div>
+            
+            <div class="flow-arrow">⬇️</div>
+
+            <div class="flow-step">
+                <div class="flow-icon">🔁</div>
+                <p><strong>Step 4: これを繰り返す (Repeat!)</strong></p>
+                <img class="screenshot-img" src="notion.jpg" alt="複数人でプレイするイメージ">
+                <p>参加者が3人の場合、完成する結果は3つです。人数が増えるとそれに応じて繰り返しの回数と完成する結果が増えます。</p>
+                <p>When there are 3 participants, 3 results will be completed. As the number of people increases, the number of steps and the completed results will increase accordingly.</p>
+            </div>
+        </div>
+
+        <div class="rule-section">
+            <div class="rule-icon">💡</div>
+            <div class="rule-description">
+                <strong>結果発表！ / The Reveal!</strong><br>
+                最後に、全員で奇跡（？）の伝言結果を見て笑いましょう！最初の文章がどんな結末を迎えたか、お楽しみに！<br>
+                Finally, we'll all watch the hilarious results together. See how the original sentence changed!
+                <img class="screenshot-img" src="result2.jpg" alt="結果のスクリーンショット">
+            </div>
+        </div>
+
+        <h2>コミュニケーションのヒント / Communication Tips</h2>
+        <ul>
+            <li><strong>主語と述語を使ってより具体的な文章を書こう！ / 
+                <br>Let's try to write more specific sentences using subjects and predicates!</strong>
+                <br>具体的に書くことでゲームのおもしろさがアップ！
+                <br>Making the descriptions more specific adds complexity, which in turn enhances the fun of the game!
+                <div class="rule-section">
+                    <div class="rule-icon">💡</div>
+                <ul>
+                <br><strong>Example</strong>
+                    <li>小さな帽子をかぶった猫が一輪車に乗っている /
+                    <br>A cat wearing a tiny hat riding a unicycle.</li>
+                    <li>ロボットがスパゲッティでセーターを編もうとしている /
+                    <br>A robot trying to knit a sweater with spaghetti.</li>
+                    <li>硬い瓶の蓋を開けようと奮闘している人 /
+                    <br>A person struggling to open a stubborn jar.</li>
+                </ul>
+                </div>
+            </li>
+            <li><strong>絵はうまくなくてOK！ / Your drawing doesn't have to be perfect!</strong>
+                <br>特徴を捉えて、シンプルに描くのがコツです。楽しんで描きましょう！
+                <br>The key is to capture the main features. Just have fun drawing!
+            </li>
+            <li><strong>想像力を働かせよう！ / Use your imagination!</strong>
+                <br>不思議な絵が出てきても、面白く解釈してみましょう！
+                <br>Even if you see a strange drawing, try to interpret it in a fun way!
+            </li>
+            <li><strong>リアクションを大切に！ / Reactions are important!</strong>
+                <br>結果発表の時は、ぜひ声やチャットでリアクションして盛り上がりましょう！
+                <br>During the reveal, let's make it exciting with our voices and chat messages!
+            </li>
+        </ul>
+
+        <div class="footer">
+            <p>それでは、Gartic Phoneの世界を一緒に楽しみましょう！<br>Let's have a great time together in the world of Gartic Phone!</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
